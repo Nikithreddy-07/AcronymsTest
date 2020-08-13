@@ -35,7 +35,6 @@ class AcronymsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupUI()
         setupViewmodel()
     }
@@ -55,6 +54,7 @@ class AcronymsFragment : Fragment() {
             .get(AcronymViewModel::class.java)
 
         acronymViewModel.acronymsResponce.observe(viewLifecycleOwner, Observer { acronymsResponce ->
+            showProgress(false)
             if(acronymsResponce.isNotEmpty()) {
                 acronymRecyclerViewAdapter?.setData(acronymsResponce.first().lfs)
             }else {
@@ -64,6 +64,7 @@ class AcronymsFragment : Fragment() {
 
         })
         acronymViewModel.acronymsError.observe(viewLifecycleOwner, Observer {
+            showProgress(false)
             showMessate(getString(R.string.result_error))
         })
     }
@@ -72,6 +73,14 @@ class AcronymsFragment : Fragment() {
         snack.show()
     }
     fun search(name:String) {
+        showProgress(true)
         acronymViewModel.getAcronyms(name)
+    }
+    private fun showProgress(isShow:Boolean) {
+        if (isShow) {
+            progressBar.visibility = View.VISIBLE
+        }else {
+            progressBar.visibility = View.GONE
+        }
     }
 }
