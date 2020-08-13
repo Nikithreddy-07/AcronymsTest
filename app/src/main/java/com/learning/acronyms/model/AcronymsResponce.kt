@@ -1,4 +1,4 @@
-package com.learning.acronyms
+package com.learning.acronyms.model
 
 data class AcronymsResponce (
     val sf:String, val lfs:List<Acronym>)

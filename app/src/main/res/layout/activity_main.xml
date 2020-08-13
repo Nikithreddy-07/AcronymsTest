@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <fragment
         android:id="@+id/acronymFragment"
-        android:name="com.learning.acronyms.AcronymsFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:name="com.learning.acronyms.view.AcronymsFragment"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="@dimen/dp0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

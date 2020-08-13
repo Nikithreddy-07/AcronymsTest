@@ -1,10 +1,11 @@
-package com.learning.acronyms
+package com.learning.acronyms.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.learning.acronyms.model.AcronymsResponce
+import com.learning.acronyms.networking.Repository
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.internal.schedulers.IoScheduler
 import io.reactivex.schedulers.Schedulers
 
 class AcronymViewModel(

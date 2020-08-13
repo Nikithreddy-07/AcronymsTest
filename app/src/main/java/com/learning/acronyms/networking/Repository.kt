@@ -1,6 +1,7 @@
-package com.learning.acronyms
+package com.learning.acronyms.networking
 
 import com.google.gson.GsonBuilder
+import com.learning.acronyms.model.AcronymsResponce
 import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -20,6 +21,7 @@ class Repository {
         }
     }
 
-    fun loadAcronyms(keyword:String) : Observable<List<AcronymsResponce>> =  create().getAcronyms(keyword)
+    fun loadAcronyms(keyword:String) : Observable<List<AcronymsResponce>> =  create()
+        .getAcronyms(keyword)
 
 }

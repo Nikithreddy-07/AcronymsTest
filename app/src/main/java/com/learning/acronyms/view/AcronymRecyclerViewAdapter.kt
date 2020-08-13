@@ -1,9 +1,11 @@
-package com.learning.acronyms
+package com.learning.acronyms.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.learning.acronyms.model.Acronym
+import com.learning.acronyms.R
 import kotlinx.android.synthetic.main.acronym_item.view.*
 
 class AcronymRecyclerViewAdapter : RecyclerView.Adapter<AcronymRecyclerViewAdapter.ItemViewHolder>()  {
@@ -21,13 +23,13 @@ class AcronymRecyclerViewAdapter : RecyclerView.Adapter<AcronymRecyclerViewAdapt
         }
     }
 
-    fun setData(acronyms:List<Acronym>) {
+    fun setData(acronyms:List<Acronym>?) {
         this.acronyms = acronyms
         notifyDataSetChanged()
     }
 
     inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)  {
-        fun bindData(acronym:Acronym) {
+        fun bindData(acronym: Acronym) {
              itemView.acronymName.text = acronym.lf
         }
     }
